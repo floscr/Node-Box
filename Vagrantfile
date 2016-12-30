@@ -21,4 +21,7 @@ Vagrant.configure("2") do |config|
   # Fast file Syncing
   config.vm.synced_folder "./", "/var/www", type:"nfs", mount_options:["nolock,vers=3,udp,noatime,actimeo=1"]
 
+  # Set the provisioning script
+  config.vm.provision "shell", path: "provision.sh"
+
 end
